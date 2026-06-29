@@ -1,0 +1,25 @@
+# Code Structure for bigger Three.js Projects
+
+If you are building something using *HTML*, *CSS*, *JavaScript* and *Three.js* you have to structure your code in a way that you can easily read and write also use that code. In this github repo you will find my way to structring the code inspired by **Bruno Simon**. 
+
+***
+
+### Vite
+We are going to use a build tool ***vite*** to create vanilla js project. In this way we can install dependencies like three.js, gui using npm and we do not have to rely on cdn. Also it will be easy to build once we finish.  
+```js
+npm create vite@latest
+```
+
+### Experience Folder
+It is a good practice to put the whole experience inside a main class that will then create everything else. We are going to call it Experience (you can name it whatever we want.) Create `Experience` folder inside `src` folder.   
+
+
+`src/Experience`
+
+#### Experience Class
+Inside our `Experience` folder we will create `Experience.js` file. In this file we will create our main class and export it. This class will create our three js experience. Then we will import this class and intialize it wherever we have to create our experience.
+
+
+`src/Experience/Experience.js`
+
+#### Utils
