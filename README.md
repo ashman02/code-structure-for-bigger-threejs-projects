@@ -13,13 +13,24 @@ npm create vite@latest
 ### Experience Folder
 It is a good practice to put the whole experience inside a main class that will then create everything else. We are going to call it Experience (you can name it whatever we want.) Create `Experience` folder inside `src` folder.   
 
-
 `src/Experience`
+
+***
 
 #### Experience Class
 Inside our `Experience` folder we will create `Experience.js` file. In this file we will create our main class and export it. This class will create our three js experience. Then we will import this class and intialize it wherever we have to create our experience.
 
-
 `src/Experience/Experience.js`
 
+***
+
+*Note - If you see any __Why.js__ file indside any folder I created that file to explain why that folder has been created and what it contains.*
+
+***
+
 #### Utils
+There are handy classed that are not necessarily related to WebGL or to Three.js. We are going to put them in `/src/Experience/Utils` folder.
+
+* **Sizes** - This class will handle the sizes of the experience. It will include the width, the height and the pixel ratio. It will handle resizing as well. 
+
+* **EventEmitter** - This class will handle events. It will include the on, off and trigger methods.
