@@ -1,6 +1,8 @@
 /**
  * Why we created EventEmitter class ?
  * This class will handle events. For example we have a resize class that handles resizing of the experience. Now if resizing occurs we want our resize classes to warn other classes to update their values. We are going to use this class to do that.
+ * We can EventEmitter class in any class that needs to trigger events. Like your enemy died, player passed the current level etc. 
+ * We are going to use it one more time to tell the experience class that everything is loaded and we can start the experience.
  *
  * --- How we created this class ---
  * Bruno Simon created this class years ago and he updates it every now and then. We just copied the raw code from there.

@@ -14,12 +14,15 @@
  * --- Setup ---
  * Basic setup of our experience like sizes, scene, camera and renderer.
  * 1. Sizes
+ * 2. Time
  * 
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
+ * 2. Update - Will be called on each frame (on tick event of Time class)
  */
 
 import Sizes from "./Utils/Sizes.js"
+import Time from "./Utils/Time.js"
 
 // Create and export main class
 export default class Experience {
@@ -37,17 +40,28 @@ export default class Experience {
 		/**
 		 * Setup
          * 1. Initialize Sizes class and listen to the resize event from it. 
+		 * 2. Initialize Time class and listen to the tick event from it.
 		 */
 		this.sizes = new Sizes()
+		this.time = new Time()
 
-        // Always use arrow function in callback. If you pass direct method or use traditional function context of this keyword will be lost.
+        // Listen to resize event of Sizes class. Always use arrow function in callback. If you pass direct method or use traditional function context of this keyword will be lost.
 		this.sizes.on("resize", () => {
-			// Call resize method
+			// Call resize method of Experience class.
 			this.resize()
+		})
+
+		// Listen to tick event of Time class. 
+		this.time.on("tick", () => {
+			// Call update method of Experience class. 
+			this.update()
 		})
 	}
     // Create resize method that will be called when window is resized
 	resize() {
-        console.log("Resized occured")
     }
+
+	// Create update method that will be called on each frame (on tick event of Time class)
+	update(){
+	}
 }

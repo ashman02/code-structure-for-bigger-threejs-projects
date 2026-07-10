@@ -34,3 +34,5 @@ There are handy classed that are not necessarily related to WebGL or to Three.js
 * **Sizes** - This class will handle the sizes of the experience. It will include the width, the height and the pixel ratio. It will handle resizing as well. 
 
 * **EventEmitter** - This class will handle events. It will include the on, off and trigger methods.
+
+* **Time** - This class will handle the time of the experience. It will include the current time, the elapsed time and the delta time. It will handle ticking as well.

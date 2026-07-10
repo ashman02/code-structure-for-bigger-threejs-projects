@@ -10,5 +10,6 @@
  * --- Classes ---
  * 1. Sizes - This class will handle the sizes of the experience. It will include the width, the height and the pixel ratio. It will handle resizing as well. 
  * 2. EventEmitter - This class will handle events. It will include the on, off and trigger methods.
+ * 3. Time - This class will handle the time of the experience. It will include the current time, the elapsed time and the delta time. It will handle ticking as well.
  * 
  */
