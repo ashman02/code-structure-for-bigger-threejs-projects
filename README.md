@@ -44,3 +44,5 @@ There are handy classed that are not necessarily related to WebGL or to Three.js
 Now we will start working in our Experience folder `src/Experience` directly instead of utils folder.  
 
 * **Scene** - Inside our `Experience.js` file we will add one line of code to create our scene. We do not have to create separate class file like Scene.js we can add scene directly inside our `Experience.js` class.
+
+* **Camera** - `src/Experience/Camera.js` will handle our camera. We will add orbit controls in the Camera class as well.
