@@ -58,3 +58,5 @@ It's time to add some visible stuff to our scene. We are going to separate every
 
 * **World** - Everything related to the world will be instantiated in World class. It's like Experience class but for visible stuff like meshes, lights etc. 
 `src/Experience/World/World.js`
+
+* **Environment** - This class will contain all the lights of our world, later environment map.

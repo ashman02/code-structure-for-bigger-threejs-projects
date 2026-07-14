@@ -10,12 +10,16 @@
  * You have World class now you can create things directly in this class or you can create separate classes for things like lights etc.
  * This is a part where the structure can vary a lot according to your project's characteristics and your perferences.
  * In this project we are going to create separate class "Environment" that will contain our lights and later environment map.
+ * 
+ * --- Setup ---
+ * 1. Environment
  *  
  * 
  */
 
 import * as THREE from "three"
 import Experience from "../Experience.js"
+import Environment from "./Environment.js"
 
 export default class World {
 	constructor() {
@@ -30,5 +34,10 @@ export default class World {
         )
 
         this.scene.add(testMesh)
+
+		/**
+		 * Setup
+		 */
+		this.environment = new Environment()
 	}
 }
