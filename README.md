@@ -48,3 +48,13 @@ Now we will start working in our Experience folder `src/Experience` directly ins
 * **Camera** - `src/Experience/Camera.js` will handle our camera. We will add orbit controls in the Camera class as well.
 
 * **Renderer** - `src/Experience/Renderer.js` will handle our Renderer. 
+
+***
+
+#### World Folder
+It's time to add some visible stuff to our scene. We are going to separate everything that composes our World in a class and a folder named World. 
+
+`src/Experience/World`
+
+* **World** - Everything related to the world will be instantiated in World class. It's like Experience class but for visible stuff like meshes, lights etc. 
+`src/Experience/World/World.js`

@@ -18,6 +18,7 @@
  * 3. Scene - we have not created separate class for scene because it is just one line of code. (we do not have to create separate classes for each property)
  * 4. Camera
  * 5. Renderer
+ * 6. World
  *
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
@@ -32,6 +33,7 @@ import Sizes from "./Utils/Sizes.js"
 import Time from "./Utils/Time.js"
 import Camera from "./Camera.js"
 import Renderer from "./Renderer.js"
+import World from "./World/World.js"
 
 let instance = null
 
@@ -63,12 +65,14 @@ export default class Experience {
 		 * 3. Create our scene (not saperate class)
 		 * 4. Instantiate Camera class
 		 * 5. Instantiate Renderer class
+		 * 6. Instantiate World class
 		 */
 		this.sizes = new Sizes()
 		this.time = new Time()
 		this.scene = new THREE.Scene()
 		this.camera = new Camera()
 		this.renderer = new Renderer()
+		this.world = new World()
 
 		// Listen to resize event of Sizes class. Always use arrow function in callback. If you pass direct method or use traditional function context of this keyword will be lost.
 		this.sizes.on("resize", () => {
