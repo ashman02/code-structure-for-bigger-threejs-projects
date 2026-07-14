@@ -19,6 +19,7 @@
  * 4. Camera
  * 5. Renderer
  * 6. World
+ * 7. Resources
  *
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
@@ -34,6 +35,8 @@ import Time from "./Utils/Time.js"
 import Camera from "./Camera.js"
 import Renderer from "./Renderer.js"
 import World from "./World/World.js"
+import Resources from "./Utils/Resources.js"
+import sources from "./sources.js"
 
 let instance = null
 
@@ -66,10 +69,12 @@ export default class Experience {
 		 * 4. Instantiate Camera class
 		 * 5. Instantiate Renderer class
 		 * 6. Instantiate World class
+		 * 7. Instantiate Resources class right after our scene
 		 */
 		this.sizes = new Sizes()
 		this.time = new Time()
 		this.scene = new THREE.Scene()
+		this.resources = new Resources(sources) // Number 7 (do not be confused)
 		this.camera = new Camera()
 		this.renderer = new Renderer()
 		this.world = new World()

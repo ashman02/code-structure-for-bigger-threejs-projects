@@ -56,7 +56,23 @@ It's time to add some visible stuff to our scene. We are going to separate every
 
 `src/Experience/World`
 
-* **World** - Everything related to the world will be instantiated in World class. It's like Experience class but for visible stuff like meshes, lights etc. 
+* **World** - Everything related to the world will be instantiated in World class. It's like Experience class but for visible stuff like meshes, lights etc.   
 `src/Experience/World/World.js`
 
 * **Environment** - This class will contain all the lights of our world, later environment map.
+
+***
+
+#### Resources class in Utils Folder
+We are going to centerlize asset loading in a dedicated class that will -
+* Instantiate all of the loaders we need
+* Loop through an array of assets and load them
+* Trigger an event when all assets are loaded
+
+`/src/Experience/Utils/Resources.js`
+
+> **sources.js** - As I have mentioned earlier we are going to create an array of assets and loop through it to load the assets. visit `src/Experience/Utils/Resources.js` to know more.  
+> It is going to be a huge array so we are going to create that array inside a separate file named sources.js.  
+> `src/Experience/sources.js`
+
+
