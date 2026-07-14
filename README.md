@@ -36,3 +36,11 @@ There are handy classed that are not necessarily related to WebGL or to Three.js
 * **EventEmitter** - This class will handle events. It will include the on, off and trigger methods.
 
 * **Time** - This class will handle the time of the experience. It will include the current time, the elapsed time and the delta time. It will handle ticking as well.
+
+***
+
+
+#### Experience Folder Again
+Now we will start working in our Experience folder `src/Experience` directly instead of utils folder.  
+
+* **Scene** - Inside our `Experience.js` file we will add one line of code to create our scene. We do not have to create separate class file like Scene.js we can add scene directly inside our `Experience.js` class.

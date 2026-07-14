@@ -15,12 +15,14 @@
  * Basic setup of our experience like sizes, scene, camera and renderer.
  * 1. Sizes
  * 2. Time
+ * 3. Scene - we have not created separate class for scene because it is just one line of code. (we do not have to create separate classes for each property)
  * 
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
  * 2. Update - Will be called on each frame (on tick event of Time class)
  */
 
+import * as THREE from "three"
 import Sizes from "./Utils/Sizes.js"
 import Time from "./Utils/Time.js"
 
@@ -41,9 +43,11 @@ export default class Experience {
 		 * Setup
          * 1. Initialize Sizes class and listen to the resize event from it. 
 		 * 2. Initialize Time class and listen to the tick event from it.
+		 * 3. Create our scene (not saperate class)
 		 */
 		this.sizes = new Sizes()
 		this.time = new Time()
+		this.scene = new THREE.Scene()
 
         // Listen to resize event of Sizes class. Always use arrow function in callback. If you pass direct method or use traditional function context of this keyword will be lost.
 		this.sizes.on("resize", () => {
