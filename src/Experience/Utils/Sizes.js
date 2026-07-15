@@ -13,7 +13,7 @@
  * 2. Import that class.
  * 3. Our original Sizes class will inherit that class.
  * 4. Call super() to call the constructor of the parent class (EventEmitter).
- * 5. We are going to trigger the events when resize occurs using trigger method of EventEmitter class from inside our Sizes class. (Then later listen to those events from outside the sizes class.)
+ * 5. We are going to trigger the events when resize occurs using trigger method of EventEmitter class from our Sizes class. (Then later listen to those events from outside the sizes class.)
  * 
  */
 

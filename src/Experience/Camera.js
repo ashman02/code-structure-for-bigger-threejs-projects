@@ -8,7 +8,7 @@
  *    (i) Global variable - using window.experience (we have already created it in Experience class).
  *    (ii) From a Parameter - Pass the experience as parameter to the constructor of Camera class.
  *    (iii) Singleton - A singleton is a class that will only instantiate just like usual when it's the first time. But, for all the following times, it will return the same first instance.
- * 3. We are going to use Singleton approach. So make our main Experience.js class singleton. (He use this approach but we can use any of the above three approaches. Me personally like second approach. But he is using this approach so are we for the sake of this tutorial.)
+ * 3. We are going to use Singleton approach. So make our main Experience.js class singleton. (He use this approach but we can use any of the above three approaches. Me personally like second approach. But he is using this approach so are we for the sake of this tutorial. Comes handy later now I know why he used this approach.)
  * 4. Import and Instantiate Experience Class here.
  * 5. Now we are going to create Camera Instance and Orbit controls. To keep things organized we will create separate methods for them.
  * 6. Inside setInstance method create our Camera and save it as instance.
