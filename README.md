@@ -85,3 +85,9 @@ Now our Resources are being loaded so we can use them and add stuff inside our w
 * **Floor** - We are creating a separate class for floor. This is not need and bit of overkill but to practice things we are doing this. Otherwise we can add floor directly inside our world.
 
 * **Fox** - Created a separate class for Fox model inside our World folder.
+
+***
+
+#### Debug
+We should have added this earlier but if in your real project you have to add Debug configrations which you will have to in each project we are going to create a separate class inside `src/Experience/Utils` folder called Debug.
+

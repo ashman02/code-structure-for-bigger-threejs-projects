@@ -20,6 +20,7 @@
  * 5. Renderer
  * 6. World
  * 7. Resources
+ * 8. Debug - late but not always it will come earlier in most of the projects.
  *
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
@@ -37,6 +38,7 @@ import Renderer from "./Renderer.js"
 import World from "./World/World.js"
 import Resources from "./Utils/Resources.js"
 import sources from "./sources.js"
+import Debug from "./Utils/Debug.js"
 
 let instance = null
 
@@ -70,7 +72,9 @@ export default class Experience {
 		 * 5. Instantiate Renderer class
 		 * 6. Instantiate World class
 		 * 7. Instantiate Resources class right after our scene
+		 * 8. Instantiate Debug Class. We are doing this little late but this does not mean this class should always be late. In our projects we will need this earlier so we are instantiating this on the top.
 		 */
+		this.debug = new Debug()
 		this.sizes = new Sizes()
 		this.time = new Time()
 		this.scene = new THREE.Scene()
