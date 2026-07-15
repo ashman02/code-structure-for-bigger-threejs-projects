@@ -93,3 +93,5 @@ We should have added this earlier but if in your real project you have to add De
 
 * **Fox** - Created debug UI for Fox animations. Visit `src/Experience/World/Fox.js`.
 
+* **Environment Map** - For the sake of this lesson let's add some tweaks to the environment map.
+
