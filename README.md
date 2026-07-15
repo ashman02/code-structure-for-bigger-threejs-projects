@@ -24,10 +24,6 @@ Inside our `Experience` folder we will create `Experience.js` file. In this file
 
 ***
 
-*Note - If you see any __Why.js__ file indside any folder I created that file to explain why that folder has been created and what it contains.*
-
-***
-
 #### Utils
 There are handy classed that are not necessarily related to WebGL or to Three.js. We are going to put them in `/src/Experience/Utils` folder.
 
