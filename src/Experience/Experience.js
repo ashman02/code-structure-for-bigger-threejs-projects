@@ -103,6 +103,8 @@ export default class Experience {
 	update() {
 		// Update Camera (orbit controls)
 		this.camera.update()
+		// Update World (so our fox animation can work)
+		this.world.update()
 		// Update renderer
 		this.renderer.update()
 	}

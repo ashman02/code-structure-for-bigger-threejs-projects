@@ -22,6 +22,7 @@ import * as THREE from "three"
 import Experience from "../Experience.js"
 import Environment from "./Environment.js"
 import Floor from "./Floor.js"
+import Fox from "./Fox.js"
 
 export default class World {
 	constructor() {
@@ -30,14 +31,6 @@ export default class World {
 		this.scene = this.experience.scene
 		this.resources = this.experience.resources
 
-		// Test Mesh
-		const testMesh = new THREE.Mesh(
-			new THREE.BoxGeometry(1, 1, 1),
-			new THREE.MeshStandardMaterial(),
-		)
-
-		this.scene.add(testMesh)
-
 		/**
 		 * Setup
 		 */
@@ -45,12 +38,20 @@ export default class World {
 		// Before resources class we directly called our environment
 		// this.environment = new Environment()
 
-		// Listen to the ready event on resources class and once ready then create our environment class. Now we can use resources because we know everything will be loaded
+		// Listen to the ready event on resources class and once ready then instantiate classes that need access to resources. Now we can use resources because we know everything will be loaded
 		this.resources.on("ready", () => {
-			//Floor - Make sure we instantiate before our environment. 
+			//Floor - Make sure we instantiate before our environment.
 			this.floor = new Floor()
+			//Fox
+			this.fox = new Fox()
+			// Environment 
 			this.environment = new Environment()
 		})
-
+	}
+	update() {
+		// if there is a fox (check because we are instantiating our fox inside a once resources are ready so this can be null initially) update it on each frame so our fox animations can work.
+		if (this.fox) {
+			this.fox.update()
+		}
 	}
 }
