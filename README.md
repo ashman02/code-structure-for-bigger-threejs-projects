@@ -75,4 +75,10 @@ We are going to centerlize asset loading in a dedicated class that will -
 > It is going to be a huge array so we are going to create that array inside a separate file named sources.js.  
 > `src/Experience/sources.js`
 
+***
+
+#### Add Stuff inside World Folder
+Now our Resources are being loaded so we can use them and add stuff inside our world. So go to `src/Experience/World` and start adding things.
+
+* **EnvironmentMap** - Created method to apply environment map. Visit `Environment.js` and see *After Resources Class Part*.
 
