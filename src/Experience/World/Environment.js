@@ -39,7 +39,7 @@ export default class Environment {
 	}
 	// Method to apply Env map
 	setEnvironmentMap(){
-		this.environmentMap = {}
+		this.environmentMap = {} 
 		this.environmentMap.intensity = 0.4
 		this.environmentMap.texture = this.resources.items.environmentMapTexture
 		this.environmentMap.texture.encoding = THREE.sRGBEncoding

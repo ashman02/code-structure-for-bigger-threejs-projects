@@ -13,6 +13,7 @@
  *
  * --- Setup ---
  * 1. Environment
+ * 2. Floor - In tutorial it comes after environment part but we will instantiate it before environement class.
  *
  *
  */
@@ -20,6 +21,7 @@
 import * as THREE from "three"
 import Experience from "../Experience.js"
 import Environment from "./Environment.js"
+import Floor from "./Floor.js"
 
 export default class World {
 	constructor() {
@@ -45,7 +47,10 @@ export default class World {
 
 		// Listen to the ready event on resources class and once ready then create our environment class. Now we can use resources because we know everything will be loaded
 		this.resources.on("ready", () => {
+			//Floor - Make sure we instantiate before our environment. 
+			this.floor = new Floor()
 			this.environment = new Environment()
 		})
+
 	}
 }
