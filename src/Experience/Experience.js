@@ -25,6 +25,7 @@
  * --- Methods ---
  * 1. Resize - Will be called when window is resized
  * 2. Update - Will be called on each frame (on tick event of Time class)
+ * 3. Destroy - At some point we need to destroy part or whole experience so this method will come handy. (visit Destroy in README.md file to know more.)
  * 
  * --- Notes ---
  * 1. Singleton - We made this class Singleton. So, if we instantiate it multiple times, it will return the same instance. (We did this in camera part code. So check Camera.js file for more details.)
@@ -111,5 +112,55 @@ export default class Experience {
 		this.world.update()
 		// Update renderer
 		this.renderer.update()
+	}
+
+	// Method to destroy and dispose things properly
+	destroy(){
+		// Stop listening to events 
+		this.sizes.off("resize")
+		this.time.off("tick")
+
+		// Traverse the whole scene and dispose things we want to 
+
+		// If we refer to the THREE.js docs (How to dispose of objects). We need to dispose of geometries, materials, textures and then specific things like controls, passes etc. 
+		// we should read this article in three js docs. Because dispose really depends on what we have in our project. 
+
+		/**
+		 * Here is how we are going to proceed in this project (trying to cover everything) -\
+		 * - Test if it's a Mesh
+		 * - Call the dispose() function on the geometry property
+		 * - Loop through every key of the material property (because we can have different maps applied to the material like normalMap, aoMap, displacementMap etc.)
+		 * - If there is a dispose() function available on that key, call it.
+		 */
+
+		// Traverse
+		this.scene.traverse((child) => {
+			// Mesh check
+			if(child instanceof THREE.Mesh){
+				// Dispose Geometry
+				child.geometry.dispose()
+				
+				// loop through the material properties
+				for(const key in child.material){
+					const value = child.material[key]
+					
+					// Test if there is a dispose function
+					if(value && typeof value.dispose === "function"){
+						value.dispose()
+					}
+				}
+			}
+		})
+
+		// Dispose orbit controls using dispose method
+		this.camera.controls.dispose()
+
+		// Dispose renderer
+		this.renderer.instance.dispose()
+
+		// Dispose Debug
+		if(this.debug.active){
+			this.debug.ui.destroy()
+		}
 	}
 }

@@ -95,3 +95,36 @@ We should have added this earlier but if in your real project you have to add De
 
 * **Environment Map** - For the sake of this lesson let's add some tweaks to the environment map.
 
+***
+
+#### Destroying
+At some point, you might need to destroy some parts of your experience, or even the whole thing.
+
+It could be because the animation is done, the player moved to another level, the WebGL isn't visible anymore or maybe the fox ran away. 
+
+We could leave things are they are, but that is bad for performance. 
+
+We are going to destroy the whole experience and make sure to dispose of things properly.
+
+*Note - We created only one destroy method inside our main Experience class and did all the destroy things there for this project.*   
+`src/Experience/Experience.js` 
+
+* **Stoping time and Resize events** - Add destroy method to our Experience class. Stop listening to the time and resize events with off().
+
+* **Dispose Everything in the Scene** - We are going to traverse the scene and look for things that we want to dispose. Same in the Experience Class inside Destroy method that we created.
+
+* **Dispose of the Controls** - Camera does not need to be disposed, but the OrbitControls do.
+
+* **Dispose of the Renderer** - Same thing there is a dispose method for renderer as well. 
+
+* **Dispose of the Passes** - Be careful, if you are using post-processing, you'll need to dispose of the EffectComposer, its WebGLRenderTarget and any potential passes you are using.
+
+* **Dispose of the Debug** - If there is debug active we have to dispose that as well using destroy method.
+
+* **Warning** - Disposing things can be a bit tricky and you need to dive into different components asking yourself do I need to dispose this. Make sure you are disposing everything properly.
+
+* **Dispose of the Canvas** - We did not remove the canvas and last frame is still rendered in it, but you can remove from the page if you need. It is not that important it is not doing anything it's just an image.
+
+* **Disposing in classes** - We stopped listning to the sizes and time events, but those classes are still listening to native events. Example - Sizes class is listening to resize event from the window. If you are a little picky, you can handle disposing of them as well.
+
+* **Destroy Method for Each Class** - We wrote everything in the same destroy() method for the sake of simplicity. If you have a more complex project with a lot to destroy, you may want to create a destroy method for each class. Then our main destroy method in Experience class will call destroy method from all the classes like update method. He do this for his projects.
